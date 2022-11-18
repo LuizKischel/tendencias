@@ -13,9 +13,8 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
       - name: Login to DockerHub
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 420787118342.dkr.ecr.us-east-1.amazonaws.com
+      - run: aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 420787118342.dkr.ecr.us-east-1.amazonaws.com
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: <usuario-docker-hub>/senai-tdt:latest
