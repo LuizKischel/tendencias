@@ -9,6 +9,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      
+      - name: Docker version
+        run: docker -v
 
       - name: Download docker image
         run: docker pull luizsenai2022/senai:latest
