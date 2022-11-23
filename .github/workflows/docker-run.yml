@@ -18,9 +18,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Docker Version
-        run: docker -v
+      - name: Build and push
+        uses: docker/build-push-action@v3
 
       - name: Download docker image
         run: docker pull luizsenai2022/senai:latest
